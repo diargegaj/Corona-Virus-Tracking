@@ -8,4 +8,5 @@
     <string name="new_deaths">New Deaths:</string>
     <string name="total_recovered">Total Recovered:</string>
     <string name="total_active_cases">Total Active Cases:</string>
+    <string name="last_update">Last Update: %1$s</string>
 </resources>

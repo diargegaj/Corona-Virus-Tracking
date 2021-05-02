@@ -44,21 +44,25 @@ class CountriesAdapter(): RecyclerView.Adapter<CountriesAdapter.CountryViewHolde
             containerView.newDeathsNumber.text = informationPerCountry.newDeaths
             containerView.totalRecoveredNumber.text = informationPerCountry.totalRecovered
             containerView.totalActiveCasesNumber.text = informationPerCountry.activeCases
+            containerView.lastUpdate.text = String.format(
+                containerView.context.getString(R.string.last_update),
+                informationPerCountry.lastUpdate
+            )
 
             containerView.txtViewCountryName.setOnClickListener {
                 if (containerView.countryInfo.isVisible) {
-                    hideContainer()
+                    hideCountryInfo()
                 }else {
-                    showContainer()
+                    showCountryInfo()
                 }
             }
         }
 
-        private fun showContainer() {
+        private fun showCountryInfo() {
             containerView.countryInfo.visibility = View.VISIBLE
         }
 
-        private fun hideContainer() {
+        private fun hideCountryInfo() {
             containerView.countryInfo.visibility = View.GONE
         }
     }
