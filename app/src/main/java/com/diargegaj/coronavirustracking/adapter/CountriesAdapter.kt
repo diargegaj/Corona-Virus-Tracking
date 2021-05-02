@@ -38,9 +38,7 @@ class CountriesAdapter : RecyclerView.Adapter<CountriesAdapter.CountryViewHolder
         return models.size
     }
 
-    inner class CountryViewHolder(override val containerView: View): RecyclerView.ViewHolder(
-        containerView
-    ), LayoutContainer {
+    inner class CountryViewHolder(override val containerView: View): RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun fillView(informationPerCountry: InformationPerCountry){
             containerView.txtViewCountryName.text = informationPerCountry.countryText
             containerView.totalCasesNumber.text = informationPerCountry.totalCases
