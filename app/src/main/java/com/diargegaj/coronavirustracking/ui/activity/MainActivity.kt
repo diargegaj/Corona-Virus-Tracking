@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.diargegaj.coronavirustracking.CountriesAdapter
+import com.diargegaj.coronavirustracking.adapter.CountriesAdapter
 import com.diargegaj.coronavirustracking.R
 import com.diargegaj.coronavirustracking.ui.viewModels.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
