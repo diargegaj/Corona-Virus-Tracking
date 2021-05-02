@@ -1,8 +1,10 @@
 package com.diargegaj.coronavirustracking.repository
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.diargegaj.coronavirustracking.instance.RetrofitInstance
 import com.diargegaj.coronavirustracking.models.InformationPerCountry
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class CoronaVirusInformationRepository {
@@ -21,9 +23,12 @@ class CoronaVirusInformationRepository {
     private fun loadDataFromAPI() {
         val dis = RetrofitInstance.service.getInformationForAllCountries()
             .subscribeOn(Schedulers.io())
-            .subscribe {response ->
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe ({response ->
                 data?.value = response
-            }
+            }, {
+                Log.d(TAG, "Failed to get data from API ${it.message}", it)
+            })
     }
 
 

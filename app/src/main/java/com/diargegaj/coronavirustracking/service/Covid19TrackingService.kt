@@ -9,7 +9,7 @@ import retrofit2.http.GET
  */
 interface Covid19TrackingService {
 
-    @GET("v1/")
+    @GET("v1")
     fun getInformationForAllCountries(): Observable<List<InformationPerCountry>>
 
 
