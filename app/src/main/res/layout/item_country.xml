@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/txtViewCountryName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/total_cases"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/totalCasesNumber"/>
@@ -40,6 +42,7 @@
             android:layout_height="wrap_content"
             android:text="X"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/totalCasesText"/>
@@ -50,6 +53,7 @@
             android:layout_height="wrap_content"
             android:text="@string/new_cases"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/totalCasesText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/newCasesNumber"/>
@@ -60,6 +64,7 @@
             android:layout_height="wrap_content"
             android:text="X"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/totalCasesNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/newCasesText"/>
@@ -70,6 +75,7 @@
             android:layout_height="wrap_content"
             android:text="@string/total_deaths"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/newCasesText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/newCasesNumber"/>
@@ -80,6 +86,7 @@
             android:layout_height="wrap_content"
             android:text="X"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/newCasesNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/newCasesText"/>
@@ -90,6 +97,7 @@
             android:layout_height="wrap_content"
             android:text="@string/new_deaths"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/totalDeathsText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/newCasesNumber"/>
@@ -100,6 +108,7 @@
             android:layout_height="wrap_content"
             android:text="X"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/totalDeathsNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/newCasesText"/>
@@ -110,6 +119,7 @@
             android:layout_height="wrap_content"
             android:text="@string/total_recovered"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/newDeathsText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/newCasesNumber"/>
@@ -120,6 +130,7 @@
             android:layout_height="wrap_content"
             android:text="X"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/newDeathsNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/newCasesText"/>
@@ -130,6 +141,7 @@
             android:layout_height="wrap_content"
             android:text="@string/total_active_cases"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/totalRecoveredText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/newCasesNumber"/>
@@ -140,6 +152,7 @@
             android:layout_height="wrap_content"
             android:text="X"
             android:textColor="@color/black"
+            android:padding="5dp"
             app:layout_constraintTop_toBottomOf="@id/totalRecoveredNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/newCasesText"/>

@@ -3,6 +3,7 @@ package com.diargegaj.coronavirustracking.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.diargegaj.coronavirustracking.R
 import com.diargegaj.coronavirustracking.models.InformationPerCountry
@@ -12,7 +13,7 @@ import kotlinx.android.synthetic.main.item_country.view.*
 /**
  * Created by Diar Gegaj on 21-05-02.
  */
-class CountriesAdapter: RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>() {
+class CountriesAdapter(): RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>() {
 
     private var models: List<InformationPerCountry> = mutableListOf()
 
@@ -34,7 +35,7 @@ class CountriesAdapter: RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>
         return models.size
     }
 
-    inner class CountryViewHolder(override val containerView: View): RecyclerView.ViewHolder(containerView), LayoutContainer{
+    inner class CountryViewHolder(override val containerView: View): RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun fillView(informationPerCountry: InformationPerCountry){
             containerView.txtViewCountryName.text = informationPerCountry.countryText
             containerView.totalCasesNumber.text = informationPerCountry.totalCases
@@ -44,6 +45,21 @@ class CountriesAdapter: RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>
             containerView.totalRecoveredNumber.text = informationPerCountry.totalRecovered
             containerView.totalActiveCasesNumber.text = informationPerCountry.activeCases
 
+            containerView.txtViewCountryName.setOnClickListener {
+                if (containerView.countryInfo.isVisible) {
+                    hideContainer()
+                }else {
+                    showContainer()
+                }
+            }
+        }
+
+        private fun showContainer() {
+            containerView.countryInfo.visibility = View.VISIBLE
+        }
+
+        private fun hideContainer() {
+            containerView.countryInfo.visibility = View.GONE
         }
     }
 }
