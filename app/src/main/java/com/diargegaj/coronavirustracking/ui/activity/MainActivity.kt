@@ -1,8 +1,9 @@
-package com.diargegaj.coronavirustracking
+package com.diargegaj.coronavirustracking.ui.activity
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.diargegaj.coronavirustracking.R
 import com.diargegaj.coronavirustracking.instance.RetrofitInstance
 import io.reactivex.schedulers.Schedulers
 
