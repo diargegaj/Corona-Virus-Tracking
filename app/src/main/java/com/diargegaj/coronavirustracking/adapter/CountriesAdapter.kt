@@ -1,5 +1,7 @@
 package com.diargegaj.coronavirustracking.adapter
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +12,11 @@ import com.diargegaj.coronavirustracking.models.InformationPerCountry
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_country.view.*
 
+
 /**
  * Created by Diar Gegaj on 21-05-02.
  */
-class CountriesAdapter(): RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>() {
+class CountriesAdapter : RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>() {
 
     private var models: List<InformationPerCountry> = mutableListOf()
 
@@ -35,7 +38,9 @@ class CountriesAdapter(): RecyclerView.Adapter<CountriesAdapter.CountryViewHolde
         return models.size
     }
 
-    inner class CountryViewHolder(override val containerView: View): RecyclerView.ViewHolder(containerView), LayoutContainer {
+    inner class CountryViewHolder(override val containerView: View): RecyclerView.ViewHolder(
+        containerView
+    ), LayoutContainer {
         fun fillView(informationPerCountry: InformationPerCountry){
             containerView.txtViewCountryName.text = informationPerCountry.countryText
             containerView.totalCasesNumber.text = informationPerCountry.totalCases
@@ -60,10 +65,25 @@ class CountriesAdapter(): RecyclerView.Adapter<CountriesAdapter.CountryViewHolde
 
         private fun showCountryInfo() {
             containerView.countryInfo.visibility = View.VISIBLE
+
+            containerView.countryInfo.animate()
+                .translationY(0f)
+                .alpha(2.0f)
+                .setListener(null)
         }
 
         private fun hideCountryInfo() {
-            containerView.countryInfo.visibility = View.GONE
+
+            containerView.countryInfo.animate()
+                .translationY(-containerView.countryInfo.height.toFloat())
+                .alpha(2.0f)
+                .setListener(object : AnimatorListenerAdapter() {
+
+                    override fun onAnimationEnd(animation: Animator?) {
+                        super.onAnimationEnd(animation)
+                        containerView.countryInfo.visibility = View.GONE
+                    }
+                })
         }
     }
 }

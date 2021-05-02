@@ -3,6 +3,7 @@ package com.diargegaj.coronavirustracking.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diargegaj.coronavirustracking.R
 import com.diargegaj.coronavirustracking.adapter.CountriesAdapter
@@ -32,5 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         countriesRecyclerView.layoutManager = LinearLayoutManager(this)
         countriesRecyclerView.adapter = adapter
+        countriesRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     }
 }
